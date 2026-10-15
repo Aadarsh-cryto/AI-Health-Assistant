@@ -1,0 +1,21 @@
+{
+  "name": "ai-health-assistant-backend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "check:gemini": "node scripts/checkGeminiConnectivity.js",
+    "check": "node --check src/server.js && node --check src/app.js && node --check src/config/db.js && node --check src/config/auth.js && node --check src/models/User.js && node --check src/models/HealthHistoryRecord.js && node --check src/models/HealthProfile.js && node --check src/controllers/authController.js && node --check src/controllers/symptomController.js && node --check src/controllers/healthHistoryController.js && node --check src/controllers/healthProfileController.js && node --check src/middleware/authMiddleware.js && node --check src/middleware/errorMiddleware.js && node --check src/routes/authRoutes.js && node --check src/routes/healthRoutes.js && node --check src/routes/symptomRoutes.js && node --check src/routes/healthHistoryRoutes.js && node --check src/routes/healthProfileRoutes.js && node --check src/services/geminiService.js && node --check src/services/healthHistoryReceipt.js && node --check src/validators/symptomValidator.js && node --check src/validators/healthRecordsValidator.js && node --check scripts/checkGeminiConnectivity.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@google/genai": "^2.29.0",
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.11.2"
+  }
+}
