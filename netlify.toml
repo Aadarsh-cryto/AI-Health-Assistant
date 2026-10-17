@@ -1,12 +1,12 @@
 
 [build]
-  command = "npm install --prefix server && npm install --prefix client && npm run build --prefix client"
-  publish = "client/dist"
+  command = "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend"
+  publish = "frontend/dist"
   functions = "netlify/functions"
 
 [build.environment]
   SECRETS_SCAN_OMIT_KEYS = "GEMINI_MODEL"
-  SECRETS_SCAN_OMIT_PATHS = "server/.env.example,server/scripts/checkGeminiConnectivity.js,server/src/services/geminiService.js,server/tests/symptoms.test.js"
+  SECRETS_SCAN_OMIT_PATHS = "backend/.env.example,backend/scripts/checkGeminiConnectivity.js,backend/src/services/geminiService.js,backend/tests/symptoms.test.js"
 
 [functions]
   node_bundler = "esbuild"
